@@ -1,0 +1,269 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A457C10F160FA55E00CFB513 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A457C10E160FA55E00CFB513 /* UIKit.framework */; };
+		A457C111160FA55E00CFB513 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A457C110160FA55E00CFB513 /* Foundation.framework */; };
+		A457C113160FA55E00CFB513 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A457C112160FA55E00CFB513 /* CoreGraphics.framework */; };
+		A457C119160FA55E00CFB513 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A457C117160FA55E00CFB513 /* InfoPlist.strings */; };
+		A457C11B160FA55E00CFB513 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A457C11A160FA55E00CFB513 /* main.m */; };
+		A457C11F160FA55E00CFB513 /* IIIUIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A457C11E160FA55E00CFB513 /* IIIUIAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A457C10A160FA55E00CFB513 /* IIIUI-0.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IIIUI-0.1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A457C10E160FA55E00CFB513 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A457C110160FA55E00CFB513 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A457C112160FA55E00CFB513 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A457C116160FA55E00CFB513 /* IIIUI-0.1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IIIUI-0.1-Info.plist"; sourceTree = "<group>"; };
+		A457C118160FA55E00CFB513 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A457C11A160FA55E00CFB513 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A457C11C160FA55E00CFB513 /* IIIUI-0.1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IIIUI-0.1-Prefix.pch"; sourceTree = "<group>"; };
+		A457C11D160FA55E00CFB513 /* IIIUIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIUIAppDelegate.h; sourceTree = "<group>"; };
+		A457C11E160FA55E00CFB513 /* IIIUIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIUIAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A457C107160FA55E00CFB513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A457C10F160FA55E00CFB513 /* UIKit.framework in Frameworks */,
+				A457C111160FA55E00CFB513 /* Foundation.framework in Frameworks */,
+				A457C113160FA55E00CFB513 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A457C0FF160FA55E00CFB513 = {
+			isa = PBXGroup;
+			children = (
+				A457C114160FA55E00CFB513 /* IIIUI-0.1 */,
+				A457C10D160FA55E00CFB513 /* Frameworks */,
+				A457C10B160FA55E00CFB513 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A457C10B160FA55E00CFB513 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A457C10A160FA55E00CFB513 /* IIIUI-0.1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A457C10D160FA55E00CFB513 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A457C10E160FA55E00CFB513 /* UIKit.framework */,
+				A457C110160FA55E00CFB513 /* Foundation.framework */,
+				A457C112160FA55E00CFB513 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A457C114160FA55E00CFB513 /* IIIUI-0.1 */ = {
+			isa = PBXGroup;
+			children = (
+				A457C11D160FA55E00CFB513 /* IIIUIAppDelegate.h */,
+				A457C11E160FA55E00CFB513 /* IIIUIAppDelegate.m */,
+				A457C115160FA55E00CFB513 /* Supporting Files */,
+			);
+			path = "IIIUI-0.1";
+			sourceTree = "<group>";
+		};
+		A457C115160FA55E00CFB513 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A457C116160FA55E00CFB513 /* IIIUI-0.1-Info.plist */,
+				A457C117160FA55E00CFB513 /* InfoPlist.strings */,
+				A457C11A160FA55E00CFB513 /* main.m */,
+				A457C11C160FA55E00CFB513 /* IIIUI-0.1-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A457C109160FA55E00CFB513 /* IIIUI-0.1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A457C122160FA55E00CFB513 /* Build configuration list for PBXNativeTarget "IIIUI-0.1" */;
+			buildPhases = (
+				A457C106160FA55E00CFB513 /* Sources */,
+				A457C107160FA55E00CFB513 /* Frameworks */,
+				A457C108160FA55E00CFB513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IIIUI-0.1";
+			productName = "IIIUI-0.1";
+			productReference = A457C10A160FA55E00CFB513 /* IIIUI-0.1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A457C101160FA55E00CFB513 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IIIUI;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "You Star";
+			};
+			buildConfigurationList = A457C104160FA55E00CFB513 /* Build configuration list for PBXProject "IIIUI-0.1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A457C0FF160FA55E00CFB513;
+			productRefGroup = A457C10B160FA55E00CFB513 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A457C109160FA55E00CFB513 /* IIIUI-0.1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A457C108160FA55E00CFB513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A457C119160FA55E00CFB513 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A457C106160FA55E00CFB513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A457C11B160FA55E00CFB513 /* main.m in Sources */,
+				A457C11F160FA55E00CFB513 /* IIIUIAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A457C117160FA55E00CFB513 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A457C118160FA55E00CFB513 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A457C120160FA55E00CFB513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A457C121160FA55E00CFB513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A457C123160FA55E00CFB513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IIIUI-0.1/IIIUI-0.1-Prefix.pch";
+				INFOPLIST_FILE = "IIIUI-0.1/IIIUI-0.1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A457C124160FA55E00CFB513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IIIUI-0.1/IIIUI-0.1-Prefix.pch";
+				INFOPLIST_FILE = "IIIUI-0.1/IIIUI-0.1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A457C104160FA55E00CFB513 /* Build configuration list for PBXProject "IIIUI-0.1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A457C120160FA55E00CFB513 /* Debug */,
+				A457C121160FA55E00CFB513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A457C122160FA55E00CFB513 /* Build configuration list for PBXNativeTarget "IIIUI-0.1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A457C123160FA55E00CFB513 /* Debug */,
+				A457C124160FA55E00CFB513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A457C101160FA55E00CFB513 /* Project object */;
+}
