@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "IndexViewController.h"
+#import "UserPageViewController.h"
 
 @interface LoginViewController ()
 
@@ -15,7 +17,7 @@
 
 @implementation LoginViewController
 
-@synthesize regBtn, usernamelab, passwordlab, usernametf,passwordtf,logsv;
+@synthesize regBtn, usernamelab, passwordlab, usernametf,passwordtf,logsv, tabbar, ipc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,8 +39,8 @@
     
 //   [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardWillShow) name:UIKeyboardWillShowNotification object:nil];
     
-//    usernametf.clearButtonMode = UITextFieldViewModeWhileEditing;
-//    passwordtf.clearButtonMode = UITextFieldViewModeWhileEditing;
+    usernametf.clearButtonMode = UITextFieldViewModeWhileEditing;
+    passwordtf.clearButtonMode = UITextFieldViewModeWhileEditing;
     
     UIView *uv = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
     usernametf.inputAccessoryView = uv;
@@ -79,9 +81,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField.tag == 2) {
-        UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"提示" message:@"测试" delegate:nil cancelButtonTitle:@"close" otherButtonTitles: nil];
-        [av show];
-        
+        [self performSelector:@selector(login) withObject:self];
     } else {
         [passwordtf becomeFirstResponder];        
     }
@@ -91,17 +91,42 @@
 
 -(IBAction)goNext:(id)sender
 {
+    
 }
 
--(IBAction)login:(id)sender
+//登陆
+-(void)login
 {
+    tabbar = [[UITabBarController alloc]init];
 
+    IndexViewController *indexPage= [[IndexViewController alloc]initWithNibName:@"IndexViewController" bundle:nil];
+    indexPage.tabBarItem.title = @"首页";
+    indexPage.tabBarItem.tag = 1;
+    
+    UserPageViewController *userPage = [[UserPageViewController alloc]initWithNibName:@"UserPageViewController" bundle:nil];
+    userPage.navigationItem.title = @"用户主页";
+    
+    UINavigationController *usernav = [[UINavigationController alloc]initWithRootViewController:userPage];
+    usernav.tabBarItem.title = @"用户主页";
+    
+    ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType =  UIImagePickerControllerSourceTypeCamera;
+    ipc.showsCameraControls = NO;
+    ipc.allowsEditing = NO;
+    ipc.delegate = self;
+    ipc.tabBarItem.title = @"分享";
+    
+    NSArray *views = [[NSArray alloc]initWithObjects:indexPage, ipc, usernav, nil];
+    tabbar.viewControllers = views;
+    
+    tabbar.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:tabbar animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
