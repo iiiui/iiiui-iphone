@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate>
+@interface LoginViewController : UIViewController<UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIVideoEditorControllerDelegate>
 
 
 @property(nonatomic, strong) UILabel *usernamelab;
@@ -18,10 +18,14 @@
 @property(nonatomic, strong) IBOutlet UITextField *passwordtf;
 @property(nonatomic, strong) IBOutlet UIButton *regBtn;
 
+
+@property(nonatomic, strong) UIImagePickerController *ipc;
+@property(nonatomic, strong) UITabBarController *tabbar;
+
 @property(nonatomic, strong) IBOutlet UIScrollView *logsv;
 
 -(IBAction)goNext:(id)sender;
--(IBAction)login:(id)sender;
+-(void)login;
 -(IBAction)goRegisterView:(id)sender;
 
 @end
