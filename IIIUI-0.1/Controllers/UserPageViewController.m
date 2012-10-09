@@ -7,6 +7,7 @@
 //
 
 #import "UserPageViewController.h"
+#import "LoginViewController.h"
 
 @interface UserPageViewController ()
 
@@ -19,6 +20,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        UIBarButtonItem *logout = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStyleBordered target:self action:@selector(logout)];
+        
+        self.navigationItem.rightBarButtonItem = logout;
+        
+
     }
     return self;
 }
@@ -27,6 +34,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)logout
+{
+    
+    LoginViewController *loginview = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    
+    loginview.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:loginview animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
