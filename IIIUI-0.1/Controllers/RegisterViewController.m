@@ -11,6 +11,7 @@
 #import "AFHTTPClient.h"
 
 
+
 //#import <QuartzCore/QuartzCore.h>
 
 @interface RegisterViewController ()
@@ -50,14 +51,12 @@
     NSDictionary *reginfo = [NSDictionary dictionaryWithObjectsAndKeys:@"msneeq@163.com",@"user[email]",@"123455", @"user[password]", nil];
     
     AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://192.168.1.115:3000"]];
-
-    NSLog(@"aaa");
-
     
-    [client postPath:@"/api/users/sign_up" parameters:reginfo success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [client postPath:@"/api/users/sign_in" parameters:reginfo success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"dd");
-        NSString *text = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"Response: %@", text);
+
+      //  NSString *text = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+       // NSLog(@"Response: %@", text);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"errror");
             NSLog(@"%@",[error description]);
