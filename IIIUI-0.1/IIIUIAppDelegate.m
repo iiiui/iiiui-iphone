@@ -9,12 +9,17 @@
 #import "IIIUIAppDelegate.h"
 
 @implementation IIIUIAppDelegate
+@synthesize loginViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+
+    loginViewController = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    self.window.rootViewController = loginViewController;
+
     [self.window makeKeyAndVisible];
     return YES;
 }

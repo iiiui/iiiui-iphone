@@ -12,3 +12,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+
+//api定义
+#define api_domain @"http://192.168.1.115:3000"
+#define api_users_sign_up @"/api/users/sign_up"
+#define api_users_sign_in @"/api/users/sign_in"
