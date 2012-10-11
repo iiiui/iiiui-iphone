@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface IndexViewController : UIViewController
-
+{
+    UIImageView *iv;
+}
 @end

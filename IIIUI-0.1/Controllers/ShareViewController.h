@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShareViewController : UIViewController
+@interface ShareViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIVideoEditorControllerDelegate>
+
+{
+    int count;
+    UIScrollView *myScrollView;
+    NSMutableArray *tempPictures;
+}
+@property(nonatomic, strong) UIImagePickerController *ipc;
+
+@property (strong, nonatomic) UIView* plcameraview;
+
 
 @end

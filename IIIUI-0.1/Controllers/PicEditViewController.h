@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface PicEditViewController : UIViewController
+{
+    NSMutableArray *picArray;
+}
+
+@property (nonatomic, retain)  NSMutableArray *picArray;
 
 @end

@@ -14,11 +14,16 @@
 
 @implementation PicEditViewController
 
+@synthesize picArray;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"图片编辑";
+        //隐藏底部
+        self.hidesBottomBarWhenPushed=YES;
     }
     return self;
 }
@@ -26,7 +31,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self initUI];
+}
+
+-(void)initUI
+{
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backItem)];
+    
+    UIBarButtonItem *nextStep = [[UIBarButtonItem alloc]initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(nextStep)];
+    
+    self.navigationItem.leftBarButtonItem = backItem;
+    self.navigationItem.rightBarButtonItem = nextStep;
+    
+}
+
+-(void)nextStep
+{
+    [IIIUIAlertView popAlert:@"提示" content:@"下一步"];
+}
+
+-(void)backItem
+{
+    [IIIUIAlertView popAlert:@"提示" content:@"返回"];
 }
 
 - (void)didReceiveMemoryWarning

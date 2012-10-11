@@ -10,4 +10,6 @@
 
 @interface SettingViewController : UIViewController
 
+@property(nonatomic, strong) IBOutlet UILabel *userinfo;
+
 @end

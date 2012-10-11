@@ -10,6 +10,7 @@
 #import "RegisterViewController.h"
 #import "IndexViewController.h"
 #import "UserPageViewController.h"
+#import "ShareViewController.h"
 #import "UserService.h"
 
 @interface LoginViewController ()
@@ -18,7 +19,7 @@
 
 @implementation LoginViewController
 
-@synthesize regBtn, usernamelab, passwordlab, usernametf,passwordtf,logsv, tabbar, ipc,userAccount;
+@synthesize regBtn, usernamelab, passwordlab, usernametf,passwordtf,logsv, tabbar, userAccount,hud,ipc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,7 +52,7 @@
     usernametf.delegate = self;
     passwordtf.delegate = self;
     
-    logsv.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height+100);
+    logsv.contentSize = self.view.bounds.size;
 }
 
 
@@ -97,12 +98,14 @@
 //登陆
 -(void)login
 {
+    [self dobackground];
     
     NSString *username = usernametf.text;
     NSString *password = passwordtf.text;
 
     //做验证
     userAccount = [UserAccount username:username password:password];
+
     [self loginRemote:userAccount];
 }
 
@@ -110,6 +113,7 @@
 -(void)login_success_initui
 {
     tabbar = [[UITabBarController alloc]init];
+    tabbar.delegate = self;
     
     IndexViewController *indexPage= [[IndexViewController alloc]initWithNibName:@"IndexViewController" bundle:nil];
     indexPage.tabBarItem.title = @"首页";
@@ -120,32 +124,45 @@
     
     UINavigationController *usernav = [[UINavigationController alloc]initWithRootViewController:userPage];
     usernav.tabBarItem.title = @"用户主页";
-    
-    //调用摄像头
-    ipc = [[UIImagePickerController alloc] init];
-    ipc.sourceType =  UIImagePickerControllerSourceTypeCamera;
-    ipc.showsCameraControls = NO;
-    ipc.allowsEditing = NO;
-    ipc.delegate = self;
-    ipc.tabBarItem.title = @"分享";
-    
-    NSArray *views = [[NSArray alloc]initWithObjects:indexPage, ipc, usernav, nil];
+    usernav.tabBarItem.tag = 2;
+
+    ShareViewController *shareView = [[ShareViewController alloc]initWithNibName:@"ShareViewController" bundle:nil];
+    UINavigationController *sharenav = [[UINavigationController alloc]initWithRootViewController:shareView];
+    sharenav.tabBarItem.tag = 2;
+    sharenav.tabBarItem.title = @"分享";
+
+    NSArray *views = [[NSArray alloc]initWithObjects:indexPage, sharenav, usernav, nil];
     tabbar.viewControllers = views;
     
     tabbar.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentModalViewController:tabbar animated:YES];
 }
 
-
 //远程登陆验证
 -(void)loginRemote:(UserAccount *)sub_userAccount
 {
+    hud = [[MBProgressHUD alloc] initWithView:self.view];
+    [Tool showHUD:@"正在登录" andView:self.view andHUD:hud];
+
     BOOL loginflag = [UserService loginRemote:sub_userAccount];
     if (loginflag == YES) {
+        [hud hide:YES];
         [self login_success_initui];
-    }    
+    } else {
+        [hud hide:YES];
+    }
+    
 }
 
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+//    int shareIndex = 2;
+//    
+//    if (shareIndex == self.tabBarController.selectedIndex) {
+//        self.hidesBottomBarWhenPushed = YES;
+//    }
+}
 
 //键盘通知
 //-(void)keyBoardWillShow:(NSNotification *)note

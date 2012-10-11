@@ -7,10 +7,9 @@
 //
 
 #import "RegisterViewController.h"
-#import "AFHTTPRequestOperation.h"
-#import "AFHTTPClient.h"
-
-
+#import "UserPageViewController.h"
+#import "IndexViewController.h"
+#import "UserService.h"
 
 //#import <QuartzCore/QuartzCore.h>
 
@@ -19,6 +18,8 @@
 @end
 
 @implementation RegisterViewController
+
+@synthesize usernametf,passwordtf,ipc,userAccount,hud, tabbar;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 }
 
 - (void) initUI
@@ -46,21 +48,55 @@
     
 }
 
+//用户注册
 - (void)registerMeth
 {
-    NSDictionary *reginfo = [NSDictionary dictionaryWithObjectsAndKeys:@"msneeq@163.com",@"user[email]",@"123455", @"user[password]", nil];
+    NSString *username = usernametf.text;
+    NSString *password = passwordtf.text;
     
-    AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://192.168.1.115:3000"]];
+    //做验证
+    userAccount = [UserAccount username:username password:password];
     
-    [client postPath:@"/api/users/sign_in" parameters:reginfo success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"dd");
+    hud = [[MBProgressHUD alloc] initWithView:self.view];
+    [Tool showHUD:@"正在注册" andView:self.view andHUD:hud];
+    
+    BOOL flag = [UserService registerRemote:userAccount];
+    if (flag == YES) {
+        [hud hide:YES];
+        [self register_success_initui];
+    } else {
+        [hud hide:YES];
+    }
 
-      //  NSString *text = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-       // NSLog(@"Response: %@", text);
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"errror");
-            NSLog(@"%@",[error description]);
-        }];
+}
+
+-(void) register_success_initui
+{
+    tabbar = [[UITabBarController alloc]init];
+    
+    IndexViewController *indexPage= [[IndexViewController alloc]initWithNibName:@"IndexViewController" bundle:nil];
+    indexPage.tabBarItem.title = @"首页";
+    indexPage.tabBarItem.tag = 1;
+    
+    UserPageViewController *userPage = [[UserPageViewController alloc]initWithNibName:@"UserPageViewController" bundle:nil];
+    userPage.navigationItem.title = @"用户主页";
+    
+    UINavigationController *usernav = [[UINavigationController alloc]initWithRootViewController:userPage];
+    usernav.tabBarItem.title = @"用户主页";
+    
+    //调用摄像头
+    ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType =  UIImagePickerControllerSourceTypeCamera;
+    ipc.showsCameraControls = NO;
+    ipc.allowsEditing = NO;
+    ipc.delegate = self;
+    ipc.tabBarItem.title = @"分享";
+    
+    NSArray *views = [[NSArray alloc]initWithObjects:indexPage, ipc, usernav, nil];
+    tabbar.viewControllers = views;
+    
+    tabbar.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:tabbar animated:YES];
 }
 
 - (void)returnLogMeth
