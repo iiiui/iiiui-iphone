@@ -228,6 +228,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{117, 41}, {86, 69}}</string>
 								<reference key="NSSuperview" ref="444997299"/>
+								<reference key="NSNextKeyView" ref="931686373"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -240,7 +241,7 @@
 						</array>
 						<string key="NSFrameSize">{320, 460}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="931686373"/>
+						<reference key="NSNextKeyView" ref="175097733"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
