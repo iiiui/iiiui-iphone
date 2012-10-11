@@ -10,8 +10,13 @@
 
 @implementation Config
 
-@dynamic isLogin;
+@synthesize isLogin;
 
+
+-(NSString *)getIOSGuid
+{
+    return nil;
+}
 
 -(void)saveUserNameAndPwd:(NSString *)userName andPwd:(NSString *)pwd
 {
@@ -81,6 +86,7 @@
 }
 
 static Config * instance = nil;
+
 +(Config *) Instance
 {
     @synchronized(self)
@@ -90,7 +96,21 @@ static Config * instance = nil;
             [self new];
         }
     }
+    
     return instance;
+}
+
++(id)allocWithZone:(NSZone *)zone
+{
+    @synchronized(self)
+    {
+        if(instance == nil)
+        {
+            instance = [super allocWithZone:zone];
+            return instance;
+        }
+    }
+    return nil;
 }
 
 

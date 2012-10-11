@@ -12,7 +12,13 @@
 
 //是否已经登录
 @property BOOL isLogin;
+//是否具备网络链接
+@property BOOL isNetworkRunning;
 
+
+
+
+-(NSString *)getIOSGuid;
 
 
 //保存登录用户名以及密码
@@ -25,5 +31,6 @@
 -(BOOL)isCookie;
 
 +(Config *) Instance;
++(id)allocWithZone:(NSZone *)zone;
 
 @end
