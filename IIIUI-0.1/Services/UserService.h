@@ -14,4 +14,6 @@
 
 +(BOOL) loginRemote : (UserAccount *)userAccount;
 
++(BOOL) registerRemote : (UserAccount *)userAccount;
+
 @end
