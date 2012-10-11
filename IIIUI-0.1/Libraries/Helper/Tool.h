@@ -10,10 +10,7 @@
 
 @interface Tool : NSObject
 
-//是否具备网络链接
-@property BOOL isNetworkRunning;
 
--(NSString *)getIOSGuid;
-
++ (void)showHUD:(NSString *)text andView:(UIView *)view andHUD:(MBProgressHUD *)hud;
 
 @end
