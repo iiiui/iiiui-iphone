@@ -20,4 +20,18 @@
     [hud show:YES];
 }
 
+
+//目录处理
+/**
+ 
+ NSString *path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"badge"];
+ 
+ [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+ 
+ NSString *result = [path stringByAppendingPathComponent:file];
+ 
+ 
+ 
+ */
+
 @end
