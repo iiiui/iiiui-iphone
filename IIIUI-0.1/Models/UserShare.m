@@ -10,4 +10,6 @@
 
 @implementation UserShare
 
+@synthesize sid, img_url;
+
 @end

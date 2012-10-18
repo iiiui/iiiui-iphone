@@ -11,11 +11,11 @@
 @interface UserAccount : NSObject
 
 @property (nonatomic, assign) int *uid;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *email;
+@property (nonatomic, assign) NSString *name;
+@property (nonatomic, assign) NSString *email;
 
-@property (nonatomic, retain) NSString *username;
-@property (nonatomic, retain) NSString *password;
+@property (nonatomic, assign) NSString *username;
+@property (nonatomic, assign) NSString *password;
 
 
 +(UserAccount *) username:(NSString *)username password:(NSString *)password;

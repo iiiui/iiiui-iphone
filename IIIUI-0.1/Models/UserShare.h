@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface UserShare : NSObject
+{
+    int sid;
+    NSString * img_url;
+    
+}
+
+@property(nonatomic, assign) int sid;
+@property(nonatomic, strong) NSString *img_url;
 
 @end
