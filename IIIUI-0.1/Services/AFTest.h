@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface AFTest : NSObject
+{
+    NSMutableArray *returnarr;
+    
+}
+@property(nonatomic, strong) NSMutableArray *returnarr;
+
+
+-(NSMutableArray *) getShareList;
 
 @end
