@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IndexViewController : UIViewController
+@interface IndexViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
-    UIImageView *iv;
+    UITableView *sharelist;
 }
+
+@property(nonatomic, strong)  IBOutlet UITableView *sharelist;
+
+
 @end

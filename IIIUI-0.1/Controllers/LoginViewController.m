@@ -12,6 +12,7 @@
 #import "UserPageViewController.h"
 #import "ShareViewController.h"
 #import "UserService.h"
+#import "AFTest.h"
 
 @interface LoginViewController ()
 
@@ -19,7 +20,7 @@
 
 @implementation LoginViewController
 
-@synthesize regBtn, usernamelab, passwordlab, usernametf,passwordtf,logsv, tabbar, userAccount,hud,ipc;
+@synthesize regBtn, usernamelab, passwordlab, usernametf,passwordtf,logsv, tabbar, userAccount,hud,ipc, forgetBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,10 +42,7 @@
 //初始化界面 ，设置基本属性
 - (void)initUI
 {
-   
-    //键盘通知
-//  [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getFocus) name:UIControlEventTouchDown object:nil];
-    
+       
     usernametf.clearButtonMode = UITextFieldViewModeWhileEditing;
     passwordtf.clearButtonMode = UITextFieldViewModeWhileEditing;
     passwordtf.secureTextEntry = YES;
@@ -99,6 +97,8 @@
 -(void)login
 {
     [self dobackground];
+    usernametf.text = @"user@example.com";
+    passwordtf.text = @"please";
     
     NSString *username = usernametf.text;
     NSString *password = passwordtf.text;
@@ -154,32 +154,17 @@
     
 }
 
+-(IBAction)forgetMeth:(id)sender
+{
+    AFTest *af = [[AFTest alloc]init];
+    [af getShareList];
+}
+
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-//    int shareIndex = 2;
-//    
-//    if (shareIndex == self.tabBarController.selectedIndex) {
-//        self.hidesBottomBarWhenPushed = YES;
-//    }
 }
 
-//键盘通知
-//-(void)keyBoardWillShow:(NSNotification *)note
-//{
-//    UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];//知识点
-//    for(int i=0; i<[tempWindow.subviews count]; i++)
-//    {
-//
-//        NSObject *keyboard = [tempWindow.subviews objectAtIndex:i];
-//        if([[keyboard description] hasPrefix:@"<UIKeyboard"] == YES)
-//        {
-//           //keyboard.description;
-//           //[keyboard addSubview:keyPadView1];
-//
-//        }
-//    }
-//}
 
 
 - (void)didReceiveMemoryWarning

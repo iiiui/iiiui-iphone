@@ -17,6 +17,7 @@
 @property(nonatomic, strong) IBOutlet UITextField *usernametf;
 @property(nonatomic, strong) IBOutlet UITextField *passwordtf;
 
+@property(nonatomic, strong) IBOutlet UIButton *forgetBtn;
 @property(nonatomic, strong) IBOutlet UIButton *regBtn;
 @property(nonatomic, strong) UITabBarController *tabbar;
 
@@ -27,8 +28,8 @@
 @property(nonatomic, strong) UIImagePickerController *ipc;
 
 
+-(IBAction)forgetMeth:(id)sender;
 -(void)login;
-
 -(IBAction)goRegisterView:(id)sender;
 
 @end
