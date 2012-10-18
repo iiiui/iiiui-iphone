@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C89A099162D3B0B00D212E8 /* AFTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89A098162D3B0B00D212E8 /* AFTest.m */; };
+		6C89A09D162D427900D212E8 /* UserShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89A09C162D427900D212E8 /* UserShare.m */; };
 		A4572EC9162331720079848E /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4572EC7162331720079848E /* RegisterViewController.m */; };
 		A4572ECA162331720079848E /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4572EC8162331720079848E /* RegisterViewController.xib */; };
 		A4572ECF16236F0D0079848E /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4572ECE16236F0D0079848E /* logo.jpg */; };
@@ -52,6 +54,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C89A097162D3B0B00D212E8 /* AFTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTest.h; sourceTree = "<group>"; };
+		6C89A098162D3B0B00D212E8 /* AFTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTest.m; sourceTree = "<group>"; };
+		6C89A09B162D427900D212E8 /* UserShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShare.h; sourceTree = "<group>"; };
+		6C89A09C162D427900D212E8 /* UserShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShare.m; sourceTree = "<group>"; };
 		A4572EC6162331720079848E /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		A4572EC7162331720079848E /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		A4572EC8162331720079848E /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = ../Controllers/RegisterViewController.xib; sourceTree = "<group>"; };
@@ -211,6 +217,8 @@
 			children = (
 				A47E58421625EEB200E4A175 /* UserService.h */,
 				A47E58431625EEB200E4A175 /* UserService.m */,
+				6C89A097162D3B0B00D212E8 /* AFTest.h */,
+				6C89A098162D3B0B00D212E8 /* AFTest.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -298,6 +306,8 @@
 				A4D4FC031622CD760050714A /* UserAccount.m */,
 				A47E584C1625FC1200E4A175 /* Config.h */,
 				A47E584D1625FC1200E4A175 /* Config.m */,
+				6C89A09B162D427900D212E8 /* UserShare.h */,
+				6C89A09C162D427900D212E8 /* UserShare.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,6 +463,8 @@
 				A47E585616260EA800E4A175 /* SettingViewController.m in Sources */,
 				A47E5863162678A900E4A175 /* ShareViewController.m in Sources */,
 				A47E58681626919D00E4A175 /* PicEditViewController.m in Sources */,
+				6C89A099162D3B0B00D212E8 /* AFTest.m in Sources */,
+				6C89A09D162D427900D212E8 /* UserShare.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
